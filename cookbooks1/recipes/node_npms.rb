@@ -7,7 +7,6 @@ bash "install_node" do
   sudo npm install memcached
   sudo npm install mongodb
   sudo npm install pubnub
-  sleep 120
   cd /srv/www/node_development/current
   if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ]; then
   	sudo forever stopall
