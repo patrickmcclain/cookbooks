@@ -1,3 +1,9 @@
-php_pear "mongo" do
-  action :install
+bash "install_something" do
+  user "root"
+  cwd "/home/ec2-user"
+  code <<-EOH
+  sudo pecl install mongo
+  cd /etc
+  sudo sed -i -e '5iextension=mongo.so\' php.ini
+  EOH
 end
