@@ -10,4 +10,4 @@ bash "start_scripts" do
 	sudo forever start -w -a -l /srv/www/node_development/current/forever.log node.js -o /srv/www/node_development/current/out.log -e /srv/www/node_development/current/err.log activityTypes.js
   fi
   EOH
-end
+ends
