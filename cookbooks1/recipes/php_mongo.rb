@@ -5,6 +5,6 @@ bash "install_something" do
   sudo yum install telnet
   sudo pecl install mongo
   cd /etc
-  sudo sed -i -e '5iextension=mongo.so\' php.ini
+  sed -i '5s/.*/extension=mongo.so/' php.ini
   EOH
 end
