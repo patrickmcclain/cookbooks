@@ -1,6 +1,6 @@
-bash "start_scripts" do
+bash "start_node_scripts" do
   user "root"
-  cwd "/home/ec2-user"
+  cwd "/srv/www/node_development/current"
   code <<-EOH
   cd /srv/www/node_development/current
   if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ]; then
