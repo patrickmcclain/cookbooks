@@ -6,5 +6,6 @@ bash "install_something" do
   sudo pecl install mongo
   cd /etc
   sed -i '5s/.*/extension=mongo.so/' php.ini
+  service httpd restart
   EOH
 end
