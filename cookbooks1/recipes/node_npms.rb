@@ -2,20 +2,21 @@ bash "install_node" do
   user "root"
   cwd "/home/ec2-user"
   code <<-EOH
-  sudo npm install forever -g
-  sudo npm install aws-sdk
-  sudo npm install aws2js
-  sudo npm install memcached
-  sudo npm install mongodb
-  sudo npm install pubnub
-  sudo npm install stripe
+  npm install forever -g
+  npm install aws-sdk
+  npm install aws2js
+  npm install memcached
+  npm install mongodb
+  npm install pubnub
+  npm install stripe
   cd /srv/www/node_development/current
   if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ]; then
-  	sudo forever stopall
-  	sudo kill -9 node
-  	sudo forever start -a -l /srv/www/node_development/current/forever.log node.js -o /srv/www/node_development/current/out.log -e /srv/www/node_development/current/err.log node.js
-	sudo forever start -a -l /srv/www/node_development/current/forever.log node.js -o /srv/www/node_development/current/out.log -e /srv/www/node_development/current/err.log decider.js
-	sudo forever start -a -l /srv/www/node_development/current/forever.log node.js -o /srv/www/node_development/current/out.log -e /srv/www/node_development/current/err.log activityTypes.js
+  	forever stopall
+  	kill -9 node
+  	kill -9 sudo
+  	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log node.js
+	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log decider.js
+	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log activityTypes.js
   fi
   EOH
 end
