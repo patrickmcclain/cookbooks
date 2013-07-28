@@ -8,7 +8,7 @@ bash "install_node" do
   npm install memcached
   npm install mongodb
   npm install pubnub
-  npm install stripe
+  npm install stripe-api
   cd /srv/www/node_development/current
   if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ]; then
   	forever stopall
