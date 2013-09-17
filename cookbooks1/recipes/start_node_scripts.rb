@@ -8,9 +8,12 @@ bash "start_node_scripts" do
   	kill -9 node
   	kill -9 sudo
   	sudo -s
+  	
   	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log node.js
 	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log decider.js
 	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log activityTypes.js
+	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log image_activityTypes.js
+	forever start -a -l /srv/www/node_development/current/forever.log -a -o /srv/www/node_development/current/out.log -a -e /srv/www/node_development/current/err.log image_decider.js
   fi
   EOH
 end
