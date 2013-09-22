@@ -3,7 +3,7 @@ bash "start_node_scripts" do
   cwd "/srv/www/node_development/current"
   code <<-EOH
   cd /srv/www/node_development/current
-  if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ]; then
+  if [ -f decider.js ] && [ -f activityTypes.js ] && [ -f node.js ] && [ -f image_activityTypes.js ] && [ -f image_decider.js ]; then
   	forever stopall
   	kill -9 node
   	kill -9 sudo
