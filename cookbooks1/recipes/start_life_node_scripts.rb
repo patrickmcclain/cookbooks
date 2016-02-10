@@ -2,7 +2,7 @@ bash "start_life_node_scripts" do
   user "root"
   cwd "/srv/www/back_end/current"
   code <<-EOH
-  cd /srv/www/node_development/current
+  cd /srv/www/back_end/current
   if [ -f test.js ]; then
   	forever stopall
     kill -9 node
