@@ -2,6 +2,7 @@ bash "install_node" do
   user "root"
   cwd "/home/ec2-user"
   code <<-EOH
+  yum -y install GraphicsMagick.x86_64
   npm install forever -g
   npm install aws-sdk
   npm install express
